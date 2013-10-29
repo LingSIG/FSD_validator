@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.2 SYSTEM "..\myPizza.dtd">
+<?fsd href="FSD_sample.xml"?>
+<?xml-stylesheet type="text/xsl" href="add_defaults.xsl"?>
+<TEI.2>
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title>
+					<?xm-replace_text {title}?>
+				</title>
+			</titleStmt>
+			<publicationStmt>
+				<p>
+					<?xm-replace_text {p}?>
+				</p>
+			</publicationStmt>
+			<sourceDesc>
+				<p>
+					<?xm-replace_text {p}?>
+				</p>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+	<text>
+		<body>
+			<div>
+				<head>
+					<?xm-replace_text {head}?>
+				</head>
+				<p>
+					<?xm-replace_text {p}?>
+				</p>
+				<fsLib>
+					<fs type="GPSG">
+						<f name="VFORM">
+							<sym value="INF"/>
+						</f>
+						<f name="SUBJ">
+							<plus/>
+						</f>
+					</fs>
+					<fs type="">
+						<f name="VFORM">
+							<sym value="INFX"/>
+						</f>
+						<f name="SUBJ">
+							<plus/>
+						</f>
+					</fs>
+					<fs type="GPSG">
+						<f name="VFORM">
+							<sym value="PST"/>
+						</f>
+						<f name="SUBJ">
+							<plus/>
+						</f>
+					</fs>
+				</fsLib>
+			</div>
+		</body>
+	</text>
+</TEI.2>

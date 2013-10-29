@@ -1,0 +1,198 @@
+<?xml version="1.0"?>
+<!DOCTYPE TEI.fsd2 SYSTEM "teifsd2.dtd" >
+
+<TEI.fsd>
+<Tei.Header>
+<!--
+<fileDesc>
+   <titleStmt>
+      <title>A sample FSD based on the "Canine medical history"
+            example in the FS chapter of TEI P3</title>
+      <resp>
+         <role>encoded by</role>
+         <name>Gary F. Simons</name>
+      </resp>
+   </titleStmt>
+   <publicationStmt>This FSD was encoded August 14, 1993
+for the purpose of serving as a nonlinguistic example of the 
+use of FSDs.  It is a hypothetical example based on the sample
+case history encoded in the "Two illistrations" section of the
+Feature Structure chapter of TEI P3.  No database of canine 
+medical histories has actually been encoded.</publicationStmt>
+</fileDesc>
+-->
+</Tei.Header>
+<!-- ************ Canine Medical History *************** -->
+<fsDecl type='Canine medical history'>
+<fsDescr>Used to encode the medical history of a dog; see
+example in section on "Two illustrations" of Feature
+Structure chapter of TEI P3.</fsDescr>
+<fDecl name=name>
+   <fDescr>The given name of the dog</fDescr>
+   <vRange><str rel=ne></str></vRange>
+   </fDecl>
+<fDecl name=called.by org=set>
+   <fDescr>Names by which the dog is called</fDescr>
+   <vRange><str rel=ne></str></vRange>
+   </fDecl>
+<fDecl name=breed>
+   <fDescr>Breed of dog (selected from authority list)</fDescr>
+   <vRange>
+      <vAlt><sym value='cocker spaniel'><sym value=collie>
+            <sym value=dachsund><sym value='english setter'>
+            <sym value='german shepherd'><sym value='great dane'>
+            <!--Add symbols to extend the authority list-->
+      </vAlt></vRange>
+   </fDecl>
+<fDecl name=owner>
+   <fDescr>Identification of the dog's owner</fDescr>
+   <vRange><fs type='owner description'></fs></vRange>
+   </fDecl>
+<fDecl name=illnesses org=list>
+   <fDescr>The history of illnesses for which this dog has
+been diagnosed and treated</fDescr>
+   <vRange><fs type='case history'></fs></vRange>
+   </fDecl>
+</fsDecl>
+<!-- *************** Owner Description **************** -->
+<fsDecl type='owner description'>
+<fsDescr>Encodes information about the person who owns a
+dog.</fsDescr>
+<fDecl name=name>
+   <fDescr>Name of the dog's owner</fDescr>
+   <vRange><str rel=ne></str></vRange>
+   </fDecl>
+<fDecl name=address>
+   <fDescr>Address of the dog's owner</fDescr>
+   <vRange><str rel=ne></str></vRange>
+   </fDecl>
+</fsDecl>
+<!-- *************** Case History ********************* -->
+<fsDecl type='case history'>
+<fsDescr>Encodes information about a particular illness in the
+life of a dog, its diagnosis, treatment, and results</fsDescr>
+<fDecl name=name.of.specialist>
+   <fDescr>Identifies specialist who diagnosed the illness</fDescr>
+   <vRange><fs type='name structure'></fs></vRange>
+   </fDecl>
+<fDecl name=title.of.specialist>
+   <fDescr>The title of the diagnosing specialist</fDescr>
+   <vRange><str rel=ne></str></vRange>
+   </fDecl>
+<fDecl name=case.number>
+   <fDescr>The unique identification number for this case</fDescr>
+   <vRange><nbr rel=gt value=1></vRange>
+   </fDecl>
+<fDecl name=age.at.incidence>
+   <fDescr>Age of dog when incidence occurred</fDescr>
+   <vRange><msr></vRange>
+   </fDecl>
+<fDecl name=date.of.incidence>
+   <fDescr>Date when incidence occurred</fDescr>
+   <vRange><date></vRange>
+   </fDecl>
+<fDecl name=baseline.condition>
+   <fDescr>Phrases describing the dog's condition before the
+illness (selected from an authority list</fDescr>
+   <vRange>
+      <vAlt><sym value=active><sym value=lazy>
+            <sym value=indoor><sym value=outdoor>
+            <sym value=friendly><sym value=unfriendly>
+            <!--Add symbols to extend the authority list-->
+      </vAlt></vRange>
+   </fDecl>
+<fDecl name=symptoms>
+   <fDescr>The symptoms of the illness</fDescr>
+   <vRange><fs type='symptom structure'></fs></vRange>
+   </fDecl>
+<fDecl name=diagnosis>
+   <fDescr>The specialist's diagnosis</fDescr>
+   <vRange><fs type='diagnosis structure'></fs></vRange>
+   </fDecl>
+<fDecl name=treatment>
+   <fDescr>The treatment presecribed by the specialist</fDescr>
+   <vRange><fs type='treatment history'></fs></vRange>
+   </fDecl>
+<fDecl name=result>
+   <fDescr>The result to the dog's condition of following
+the prescribed treatment</fDescr>
+   <vRange><str rel=ne></str></vRange>
+   </fDecl>
+</fsDecl>
+<!-- *************** Name Structure ******************** -->
+<fsDecl type='name structure'>
+<fsDescr>Encodes parts of a personal name</fsDescr>
+<fDecl name=first.name>
+   <fDescr>First name</fDescr>
+   <vRange><str rel=ne></str></vRange>
+   </fDecl>
+<fDecl name=middle>
+   <fDescr>Middle names or initials</fDescr>
+   <vRange><str rel=ne></str></vRange>
+   </fDecl>
+<fDecl name=last.name>
+   <fDescr>Last name</fDescr>
+   <vRange><str rel=ne></str></vRange>
+   </fDecl>
+</fsDecl>
+<!-- *************** Symptom Structure **************** -->
+<fsDecl type='symptom structure'>
+<fsDescr>Encodes a description of the symptoms exhibited by
+the dog.</fsDescr>
+<fDecl name=behaviors org=set>
+   <fDescr>Behaviors exhibited by the dog (selected from an
+authority list</fDescr>
+   <vRange>
+      <vAlt><sym value=aggressive><sym value=agitated>
+            <sym value=destructive><sym value=drowsy>
+            <sym value=lethargic><sym value=unfriendly>
+            <!--Add symbols to extend the authority list-->
+      </vAlt></vRange>
+   </fDecl>
+<fDecl name=particulars>
+   <fDescr>A prose description of details of behavior</fDescr>
+   <vRange><str rel=ne></str></vRange>
+   </fDecl>
+</fsDecl>
+<!-- *************** Diagnosis Structure ************** -->
+<fsDecl type='diagnosis structure'>
+<fsDescr>Encodes the diagnosis which explains the dog's
+behavior</fsDescr>
+<fDecl name=date.of.diagnosis>
+   <fDescr>The date the diagnosis was made</fDescr>
+   <vRange><date></vRange>
+   </fDecl>
+<fDecl name=disease>
+   <fDescr>The disease the dog is through to have</fDescr>
+   <vRange><str rel=ne></str></vRange>
+   </fDecl>
+<fDecl name=presumed.cause>
+   <fDescr>The presumed cause of the disease</fDescr>
+   <vRange><str rel=ne></str></vRange>
+   </fDecl>
+</fsDecl>
+<!-- *************** Treatment History **************** -->
+<fsDecl type='treatment history'>
+<fsDescr>Encodes information about the treatment given in
+response to a diagnosis</fsDescr>
+<fDecl name=medicine>
+   <fDescr>The medicine that was administered</fDescr>
+   <vRange><str rel=ne></str></vRange>
+   </fDecl>
+<fDecl name=regime>
+   <fDescr>Names the general system for administering the
+treatment</fDescr>
+   <vRange><str rel=ne></str></vRange>
+   </fDecl>
+<fDecl name=particulars>
+   <fDescr>Details of the treatment for this particula
+case</fDescr>
+   <vRange><str rel=ne></str></vRange>
+   </fDecl>
+<fDecl name=duration.of.treatment>
+   <fDescr>Length of time over which treatment was
+administered</fDescr>
+   <vRange><msr></vRange>
+   </fDecl>
+</fsDecl>
+</TEI.fsd>

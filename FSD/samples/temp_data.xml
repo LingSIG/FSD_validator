@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI.2>
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title>
+					
+				</title>
+			</titleStmt>
+			<publicationStmt>
+				<p>
+					
+				</p>
+			</publicationStmt>
+			<sourceDesc>
+				<p>
+					
+				</p>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+	<text>
+		<body>
+			<div>
+				<head>Valid feature structures</head>
+				<p>The following feature structures should be valid:</p>
+				<fsLib>
+					<fs type="pronoun">
+						<f name="pron-type">
+							<sym value="personal">
+</sym>
+						</f>
+						<f name="person">
+							<sym value="1st">
+</sym>
+						</f>
+						<f name="number">
+							<sym value="singular">
+</sym>
+						</f>
+					</fs>
+					<fs type="pronoun">
+						<f name="pron-type">
+							<sym value="personal">
+</sym>
+						</f>
+						<f name="person">
+							<sym value="3rd">
+</sym>
+						</f>
+						<f name="number">
+							<sym value="plural">
+</sym>
+						</f>
+					</fs>
+					<fs type="pronoun">
+						<f name="pron-type">
+							<sym value="personal">
+</sym>
+						</f>
+						<f name="person">
+							<sym value="3rd">
+</sym>
+						</f>
+						<f name="number">
+							<sym value="singular">
+</sym>
+						</f>
+						<f name="gender">
+							<sym value="feminine">
+</sym>
+						</f>
+					</fs>
+				</fsLib>
+			</div>
+			<div>
+				<head>Invalid feature structures</head>
+				<p>The following feature structures should not be valid:</p>
+				<fsLib>
+					
+					<fs type="pron">
+						<f name="pron-type">
+							<sym value="personal">
+</sym>
+						</f>
+						<f name="person">
+							<sym value="1st">
+</sym>
+						</f>
+						<f name="number">
+							<sym value="singular">
+</sym>
+						</f>
+					</fs>
+					<fs type="pronoun">
+						
+						<f>
+							<sym value="personal">
+</sym>
+						</f>
+						
+						<f name="">
+							<sym value="3rd">
+</sym>
+						</f>
+						<f name="number">
+							<sym value="plural">
+</sym>
+						</f>
+					</fs>
+					<fs type="pronoun">
+						<f name="pron-type">
+							<sym value="personal">
+</sym>
+						</f>
+						
+						<f name="pers">
+							<sym value="3rd">
+</sym>
+						</f>
+						
+						<f name="number">
+							<sym value="dual">
+</sym>
+						</f>
+						
+						<f name="gender">
+							<sym value="feminine">
+</sym>
+							<sym value="masculine">
+</sym>
+						</f>
+					</fs>
+				</fsLib>
+			</div>
+		</body>
+	</text>
+</TEI.2>

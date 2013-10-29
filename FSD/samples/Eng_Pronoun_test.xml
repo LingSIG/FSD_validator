@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<!-- edited with XML Spy v4.3 (http://www.xmlspy.com) by Gary Simons (SIL International) -->
+<!-- <!DOCTYPE TEI.2 SYSTEM "..\myPizza.dtd"> -->
+<TEI.2>
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title>
+					<?xm-replace_text {title}?>
+				</title>
+			</titleStmt>
+			<publicationStmt>
+				<p>
+					<?xm-replace_text {p}?>
+				</p>
+			</publicationStmt>
+			<sourceDesc>
+				<p>
+					<?xm-replace_text {p}?>
+				</p>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+	<text>
+		<body>
+			<div>
+				<head>Valid feature structures</head>
+				<p>The following feature structures should be valid:</p>
+				<fsLib>
+					<fs type="pronoun">
+						<f name="pron-type">
+							<sym value="personal"/>
+						</f>
+						<f name="person">
+							<sym value="1st"/>
+						</f>
+						<f name="number">
+							<sym value="singular"/>
+						</f>
+					</fs>
+					<fs type="pronoun">
+						<f name="pron-type">
+							<sym value="personal"/>
+						</f>
+						<f name="person">
+							<sym value="3rd"/>
+						</f>
+						<f name="number">
+							<sym value="plural"/>
+						</f>
+					</fs>
+					<fs type="pronoun">
+						<f name="pron-type">
+							<sym value="personal"/>
+						</f>
+						<f name="person">
+							<sym value="3rd"/>
+						</f>
+						<f name="number">
+							<sym value="singular"/>
+						</f>
+						<f name="gender">
+							<sym value="feminine"/>
+						</f>
+					</fs>
+				</fsLib>
+			</div>
+			<div>
+				<head>Invalid feature structures</head>
+				<p>The following feature structures should not be valid:</p>
+				<fsLib>
+					<!-- The fs type is not defined in the FSD. -->
+					<fs type="pron">
+						<f name="pron-type">
+							<sym value="personal"/>
+						</f>
+						<f name="person">
+							<sym value="1st"/>
+						</f>
+						<f name="number">
+							<sym value="singular"/>
+						</f>
+					</fs>
+					<fs type="pronoun">
+						<!-- The f does not specify a name. -->
+						<f>
+							<sym value="personal"/>
+						</f>
+						<!-- The f does not specify a name. -->
+						<f name="">
+							<sym value="3rd"/>
+						</f>
+						<f name="number">
+							<sym value="plural"/>
+						</f>
+					</fs>
+					<fs type="pronoun">
+						<f name="pron-type">
+							<sym value="personal"/>
+						</f>
+						<!--The named feature is not allowed in the current fs type.-->
+						<f name="pers">
+							<sym value="3rd"/>
+						</f>
+						<!--The value of the feature is not in the value range defined for it in the FSD.-->
+						<f name="number">
+							<sym value="dual"/>
+						</f>
+						<!--The feature may not have multiple values.-->
+						<f name="gender">
+							<sym value="feminine"/>
+							<sym value="masculine"/>
+						</f>
+					</fs>
+				</fsLib>
+			</div>
+		</body>
+	</text>
+</TEI.2>

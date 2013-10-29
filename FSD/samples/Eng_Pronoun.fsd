@@ -1,0 +1,87 @@
+<!-- edited with XML Spy v4.3 (http://www.xmlspy.com) by Gary Simons (SIL International) -->
+<!DOCTYPE teiFsd2 SYSTEM "..\P4\fsd_standalone.dtd">
+<teiFsd2>
+	<teiHeader>
+This is a sample "toy" FSD based on a systemic network for
+the inflection of English personal pronouns in R. A. Hudson,
+English Complex Sentences (North Holland, 1972), page 60.
+It was encoded by Gary F. Simons, Summer Institute of
+Linguistics (Dallas, TX).
+
+The original version was produced on January 28, 1991.
+This is a revision produced January 1, 1992 to match version 2
+of the FSD definition.
+</teiHeader>
+	<fsDecl type="pronoun">
+		<fDecl name="pron-type">
+			<fDescr>subtype of pronoun</fDescr>
+			<vRange>
+				<vAlt>
+					<sym value="personal"/>
+					<sym value="demonstrative"/>
+					<!-- and so on -->
+				</vAlt>
+			</vRange>
+		</fDecl>
+		<fDecl name="person">
+			<vRange>
+				<vAlt>
+					<sym value="1st"/>
+					<sym value="2nd"/>
+					<sym value="3rd"/>
+				</vAlt>
+			</vRange>
+		</fDecl>
+		<fDecl name="number">
+			<vRange>
+				<vAlt>
+					<sym value="singular"/>
+					<sym value="plural"/>
+				</vAlt>
+			</vRange>
+		</fDecl>
+		<fDecl name="gender">
+			<vRange>
+				<vAlt>
+					<sym value="masculine"/>
+					<sym value="feminine"/>
+					<sym value="neuter"/>
+				</vAlt>
+			</vRange>
+		</fDecl>
+		<fsConstraints>
+			<bicond>
+				<fs>
+					<f name="pron-type">
+						<sym value="personal"/>
+					</f>
+				</fs>
+				<iff/>
+				<fs>
+					<f name="person">
+						<any/>
+					</f>
+					<f name="number">
+						<any/>
+					</f>
+				</fs>
+			</bicond>
+			<bicond>
+				<fs>
+					<f name="person">
+						<sym value="3rd"/>
+					</f>
+					<f name="number">
+						<sym value="singular"/>
+					</f>
+				</fs>
+				<iff/>
+				<fs>
+					<f name="gender">
+						<any/>
+					</f>
+				</fs>
+			</bicond>
+		</fsConstraints>
+	</fsDecl>
+</teiFsd2>

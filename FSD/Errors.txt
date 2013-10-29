@@ -1,0 +1,17 @@
+ERRORS THAT CAN BE DETECTED DURING THE VALIDATION PHASE
+
+The fs does not specify a type.  (Not an error by DTD.)
+
++The fs type is not defined in the FSD.
+
++The f does not specify a name.
+
++The named feature is not allowed in the current fs type.
+
++The value of the feature is not in the value range defined for it in the FSD.
+
++The feature may not have multiple values. 
+
+The feature has no value (only for org=single).
+
++The fs violates constraint #n.

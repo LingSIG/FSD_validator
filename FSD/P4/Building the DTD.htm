@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad//DTD HoTMetaL PRO 5.0::19980907::extensions to HTML 4.0//EN" "hmpro5.dtd">
+ 
+<HTML>
+ 
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+ 
+<BODY>
+<H1>What does it take to build the FS DTD?</H1>
+<P>G. Simons, 28 Sep 2002</P>
+<HR>
+<P>Start with <TT>teifs2.dtd</TT> and try to convert it to a clean DTD in XML
+Spy. What does it take?</P>
+<TABLE BORDER="1" CELLPADDING="6">
+<TR>
+<TH>Error</TH>
+<TH>Fix</TH>
+</TR>
+<TR>
+<TD>Entity 'n.fs' is undefined.</TD>
+<TD>Include <TT>teigis2.ent</TT></TD>
+</TR>
+<TR>
+<TD>Entity 'om.RR' is undefined.</TD>
+<TD>Include <TT>teikey2.ent</TT>. Set <TT>TEI.fs</TT> and <TT>TEI.XML</TT> to 
+<TT>'INCLUDE'</TT>.</TD>
+</TR>
+<TR>
+<TD>Entity 'a.global' is undefined.</TD>
+<TD>Include <TT>teiclas2.ent</TT>.</TD>
+</TR>
+<TR>
+<TD>Element 'alt' is undefined. <I>(It is in content model of &lt;f&gt;.)</I>
+</TD>
+<TD>Include <TT>teilink2.ent</TT>. Copy the definition of &lt;alt&gt; from 
+<TT>teilink2.dtd</TT>. (Including the whole DTD includes a host of elements not
+used in the FS model which in turn need to pull in other DTD files.)</TD>
+</TR>
+<TR>
+<TD>On &lt;alt&gt;, attributes <TT>mode</TT> and <TT>wScale</TT> need implied,
+required, or default value</TD>
+<TD>Set to #IMPLIED.</TD>
+</TR>
+</TABLE>
+<P>The make a plain DTD for FSD:</P>
+<UL>
+<LI>Start with <TT>teifsd2.dtd</TT>.</LI>
+<LI>Not clear how much it pulls in. First added header, core, and linking, and
+it still had undefined elements.</LI>
+<LI>Changed &lt;teiHeader&gt; to #PCDATA and it still had undefined elements.
+</LI>
+<LI>Changing %paraContent to #PCDATA in <TT>teiclas2.ent</TT> finally did it.
+</LI>
+</UL>
+<P>%paraContent is used by fsDesscr and fDescr.</P>
+</BODY>
+</HTML>
+ 

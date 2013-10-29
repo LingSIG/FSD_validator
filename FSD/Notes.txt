@@ -1,0 +1,9 @@
+THINGS TO FIX IN A REVISED FS and FSD
+
+The DTD has (fs | f | fAlt) as the antecedent for an <if> in a conditional default, but the dcoumentation for the <if> element says that the antecedent is a feature structure.  I'll just implement <fs>.
+
+The value for a non-conditional default is %featureVal;+, but for a conditional it is only a single featureVal. 
+
+What about <none> as the default for the default value?  Doesn't <none> go beyond the power of normal subsumption?  Or exactly what does it mean?  Does <none> subsume only <none>, or is it the same as <any> under subsumption>?  Do we just drop it?
+
+<vRange> just takes entities from the FS DTD.  At least two problems: <fs> shouldn't have embedded values, and we need to be able to add documentation to the <sym> values.

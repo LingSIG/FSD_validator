@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI.2 TEIform="TEI.2">
+	<teiHeader type="text" status="new" TEIform="teiHeader">
+		<fileDesc TEIform="fileDesc">
+			<titleStmt TEIform="titleStmt">
+				<title TEIform="title">
+					
+				</title>
+			</titleStmt>
+			<publicationStmt TEIform="publicationStmt">
+				<p TEIform="p">
+					
+				</p>
+			</publicationStmt>
+			<sourceDesc default="NO" TEIform="sourceDesc">
+				<p TEIform="p">
+					
+				</p>
+			</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+	<text TEIform="text">
+		<body TEIform="body">
+			<div org="uniform" sample="complete" part="N" TEIform="div">
+				<head TEIform="head">
+					
+				</head>
+				<p TEIform="p">
+					
+				</p>
+				<fsLib TEIform="fsLib">
+					<fs type="GPSG" rel="sb" TEIform="fs">
+						<f name="VFORM" rel="eq" TEIform="f">
+							<sym value="INF" rel="eq" TEIform="sym">
+</sym>
+						</f>
+						<f name="SUBJ" rel="eq" TEIform="f">
+							<plus TEIform="plus">
+</plus>
+						</f>
+					<f name="INV">
+<minus />
+</f>
+<f name="CONJ">
+<none />
+</f>
+<f name="COMP">
+<sym value="for" />
+</f>
+</fs>
+					<fs type="" rel="sb" TEIform="fs">
+						<f name="VFORM" rel="eq" TEIform="f">
+							<sym value="INFX" rel="eq" TEIform="sym">
+</sym>
+						</f>
+						<f name="SUBJ" rel="eq" TEIform="f">
+							<plus TEIform="plus">
+</plus>
+						</f>
+					</fs>
+					<fs type="GPSG" rel="sb" TEIform="fs">
+						<f name="VFORM" rel="eq" TEIform="f">
+							<sym value="PST" rel="eq" TEIform="sym">
+</sym>
+						</f>
+						<f name="SUBJ" rel="eq" TEIform="f">
+							<plus TEIform="plus">
+</plus>
+						</f>
+					<f name="INV">
+<minus />
+</f>
+<f name="CONJ">
+<none />
+</f>
+</fs>
+				</fsLib>
+			</div>
+		</body>
+	</text>
+</TEI.2>

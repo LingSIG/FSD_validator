@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+
+   DTD for TEI P4 Feature Structures
+   Gary Simons (SIL International)
+   21 Sept 2002
+
+   The file teifs2.dtd defines the core Feature Structure elements,
+   but it is not a stand alone DTD.  The DTD below includes all of
+   the other pieces that are needed to define a complete DTD for 
+   feature structures.
+
+   fs_standalone.dtd is the result of loading this DTD into XMLSpy
+   and using the Convert DTD feature to generate a standalone
+   DTD in a single file.
+
+ -->
+<!--Declare basic parameter entities and entities for
+TEI generic identifiers.-->
+<!ENTITY % TEI.elementNames PUBLIC '-//TEI P4//ENTITIES Generic Identifiers//EN' 'teigis2.ent'>
+%TEI.elementNames;
+
+<!--Declare entities for TEI keywords.-->
+<!ENTITY % TEI.keywords.ent PUBLIC '-//TEI P4//ENTITIES TEI Keywords//EN' 'teikey2.ent'>
+%TEI.keywords.ent;
+
+<!--Declare element classes for content models, shared
+attributes for element classes, and global attributes.-->
+<!ENTITY % TEI.elementClasses PUBLIC '-//TEI P4//ENTITIES TEI ElementClasses//EN' 'teiclas2.ent'>
+%TEI.elementClasses;
+
+<!--The content model for <f> includes <alt> which is defined
+in teilink2.dtd, but including that DTD pulls in many elements
+that are not wanted which in turn depend on other DTD files.
+Thus we just copy the definition of <alt> at the end of this
+file. The file of linking entities is included in order to
+get the definition of %a.pointer.-->
+<!ENTITY % TEI.linkingEntities PUBLIC '-//TEI P4//ENTITIES TEI ElementClasses//EN' 'teilink2.ent'>
+%TEI.linkingEntities;
+
+<!--Define the elements for feature structures-->
+<!ENTITY % TEI.fs.dtd PUBLIC '-//TEI P4//DTD Auxiliary Document Type:  Feature System Declaration//EN' 'teifs2.dtd'>
+%TEI.fs.dtd;
+
+<!-- 14.8: Alternation-->
+<!ENTITY % alt 'INCLUDE'>
+<![ %alt; [
+<!ELEMENT %n.alt; %om.RO; EMPTY> 
+<!ATTLIST %n.alt;
+      %a.global;
+      %a.pointer;
+      targets IDREFS #REQUIRED
+      mode (excl|incl) %INHERITED;
+      weights CDATA #IMPLIED
+      wScale (perc|real) %INHERITED;
+      TEIform CDATA 'alt'  >
+]]>

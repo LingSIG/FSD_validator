@@ -1,0 +1,14 @@
+
+
+2002 Implementation of a validator for FSDs
+Gary Simons, SIL International
+6 Aug 2013
+
+
+TEI2002.pdf  is the presentaiton I made at the annual meeting of the TEI.
+
+This folder contains all of the test data and the code and the notes I made during the process.
+
+I haven't touched this since the conference.  It looks like the bin folder contains the final XSLT scripts and the samples folder contains the sample data I was testing it with.
+
+The .bat files are DOS batch scripts that call Microsoft's msxml.exe engine to run the XSLT engine.
